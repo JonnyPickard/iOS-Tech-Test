@@ -8,11 +8,13 @@
 
 import Foundation
 import SwiftyJSON
+import PromiseKit
 
 class APIResponseData {
-    var responseArray = [[String]]()
     
-    func getData(requestManager: APIRequestManager = APIRequestManager()) {
+    func getData(requestManager: APIRequestManager = APIRequestManager(), completion: @escaping (_ responseArray: [[String]], _ imageDict: [String : UIImage]) -> Void) {
+        var responseArray = [[String]]()
+        
         requestManager.getRequest() { jsonResponse in
             for (_, object) in jsonResponse {
                 var array = [String]()
@@ -21,25 +23,30 @@ class APIResponseData {
                 array.append(object["name"].stringValue)
                 array.append(object["image_url"].stringValue)
                 array.append(object["url"].stringValue)
-                self.responseArray.append(array)
+                responseArray.append(array)
             }
-            self.sortArray()
+            
+            self.sortArray(responseArray: responseArray) { sortedArray in
+                self.getImageFromURL(sortedArray: sortedArray){ imageDict in
+                    completion(responseArray, imageDict)
+                }
+            }
         }
     }
     
-    func sortArray() {
-        responseArray.sort { ($0[1]) < ($1[1]) }
-        getImageFromURL(){ imageDict in
-            print(imageDict)
-        }
+    func sortArray(responseArray: [[String]], completion: (_ response: [[String]]) -> Void) {
+        let sortedArray = responseArray.sorted { ($0[1]) < ($1[1]) }
+        completion(sortedArray)
     }
     
-    func getImageFromURL(requestManager: APIRequestManager = APIRequestManager(), completion: @escaping (_ imageDict: [String : UIImage]) -> Void) {
+    func getImageFromURL(sortedArray: [[String]], requestManager: APIRequestManager = APIRequestManager(), completion: @escaping (_ imageDict: [String : UIImage]) -> Void) {
         let myGroup = DispatchGroup()
         let backgroundQ = DispatchQueue.global(qos: .default)
+        let apiArray = sortedArray
         var imageDict = [String : UIImage]()
         
-        for array in responseArray {
+        
+        for array in apiArray {
             myGroup.enter()
             
             let imageUrl = array[3]
@@ -58,4 +65,5 @@ class APIResponseData {
             completion(imageDict)
         })
     }
+    
 }

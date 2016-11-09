@@ -10,11 +10,16 @@ import UIKit
 
 class MainViewController: UIViewController {
     let DataModel = APIResponseData()
+    var responseArray = [[String]]()
+    var imageDict = [String : UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DataModel.getData()
+        DataModel.getData() { apiResponseArray, imageResponseDict in
+            self.responseArray = apiResponseArray
+            self.imageDict = imageResponseDict
+        }
     }
 
 }
