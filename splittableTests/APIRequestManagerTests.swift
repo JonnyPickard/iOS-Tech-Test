@@ -11,6 +11,24 @@ import XCTest
 
 class APIRequestManagerTests: XCTestCase {
     
+    func testGetRequest() {
+        let TestAPIRequestManager: APIRequestManager = APIRequestManager()
+        
+        let expect = expectation(description: "Pulls data from the api and runs the callback closure")
+        
+        TestAPIRequestManager.getRequest { callback, success in
+            XCTAssertTrue(success)
+            
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5) { error in
+            if let error = error {
+                XCTFail("waitForExpectationsWithTimeout errored: \(error)")
+            }
+        }
+    }
+    
     
     func testGetImageFromUrl() {
         let TestAPIRequestManager: APIRequestManager = APIRequestManager()

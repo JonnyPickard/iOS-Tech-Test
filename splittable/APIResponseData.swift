@@ -15,7 +15,7 @@ class APIResponseData {
     func getData(requestManager: APIRequestManager = APIRequestManager(), completion: @escaping (_ responseArray: [[String]], _ imageDict: [String : UIImage]) -> Void) {
         var responseArray = [[String]]()
         
-        requestManager.getRequest() { jsonResponse in
+        requestManager.getRequest() { jsonResponse, success in
             for (_, object) in jsonResponse {
                 var array = [String]()
                 array.append(object["id"].stringValue)
