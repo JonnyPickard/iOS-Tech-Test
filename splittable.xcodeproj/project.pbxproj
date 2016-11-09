@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FBBE66B31DD37518006B28BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE66B21DD37518006B28BF /* AppDelegate.swift */; };
-		FBBE66B51DD37518006B28BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE66B41DD37518006B28BF /* ViewController.swift */; };
+		FBBE66B51DD37518006B28BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE66B41DD37518006B28BF /* MainViewController.swift */; };
 		FBBE66B81DD37518006B28BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBE66B61DD37518006B28BF /* Main.storyboard */; };
 		FBBE66BA1DD37518006B28BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBBE66B91DD37518006B28BF /* Assets.xcassets */; };
 		FBBE66BD1DD37518006B28BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBE66BB1DD37518006B28BF /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		FBBE66AF1DD37518006B28BF /* splittable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = splittable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBE66B21DD37518006B28BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FBBE66B41DD37518006B28BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FBBE66B41DD37518006B28BF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FBBE66B71DD37518006B28BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FBBE66B91DD37518006B28BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBBE66BC1DD37518006B28BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,6 +74,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FBAFF8B51DD375B100FB60DC /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FBBE66B41DD37518006B28BF /* MainViewController.swift */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		FBAFF8B61DD375BA00FB60DC /* views */ = {
+			isa = PBXGroup;
+			children = (
+				FBBE66B61DD37518006B28BF /* Main.storyboard */,
+				FBBE66BB1DD37518006B28BF /* LaunchScreen.storyboard */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		FBAFF8B71DD375C400FB60DC /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
 		FBBE66A61DD37518006B28BF = {
 			isa = PBXGroup;
 			children = (
@@ -97,11 +121,11 @@
 		FBBE66B11DD37518006B28BF /* splittable */ = {
 			isa = PBXGroup;
 			children = (
+				FBAFF8B71DD375C400FB60DC /* models */,
 				FBBE66B21DD37518006B28BF /* AppDelegate.swift */,
-				FBBE66B41DD37518006B28BF /* ViewController.swift */,
-				FBBE66B61DD37518006B28BF /* Main.storyboard */,
+				FBAFF8B51DD375B100FB60DC /* controllers */,
+				FBAFF8B61DD375BA00FB60DC /* views */,
 				FBBE66B91DD37518006B28BF /* Assets.xcassets */,
-				FBBE66BB1DD37518006B28BF /* LaunchScreen.storyboard */,
 				FBBE66BE1DD37518006B28BF /* Info.plist */,
 			);
 			path = splittable;
@@ -259,7 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBBE66B51DD37518006B28BF /* ViewController.swift in Sources */,
+				FBBE66B51DD37518006B28BF /* MainViewController.swift in Sources */,
 				FBBE66B31DD37518006B28BF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +529,7 @@
 				FBBE66D91DD37518006B28BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FBBE66DA1DD37518006B28BF /* Build configuration list for PBXNativeTarget "splittableTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +538,7 @@
 				FBBE66DC1DD37518006B28BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FBBE66DD1DD37518006B28BF /* Build configuration list for PBXNativeTarget "splittableUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +547,7 @@
 				FBBE66DF1DD37518006B28BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
