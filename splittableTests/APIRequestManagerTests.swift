@@ -36,6 +36,7 @@ class APIRequestManagerTests: XCTestCase {
         let expect = expectation(description: "Pulls image from url and runs the callback closure")
         
         let url = "https://res.cloudinary.com/bizzby/image/upload/w_1024,h_576,c_fill/v1450801432/Heroes-NEW2_wnsmmi.jpg"
+        
         TestAPIRequestManager.getImageFromUrl(url: url) { callback, success in
             XCTAssertTrue(success)
             

@@ -33,7 +33,7 @@ class APIResponseDataTests: XCTestCase {
         let TestAPIResponseData: APIResponseData = APIResponseData()
         
         
-        let expect = expectation(description: "Pulls data from the api and runs the callback closure")
+        let expect = expectation(description: "Correctly sorts an array by index 1")
         
         let arrayToSort = [["0", "2"], ["0", "1"]]
         let correctSort = [["0", "1"], ["0", "2"]]
@@ -51,5 +51,27 @@ class APIResponseDataTests: XCTestCase {
                 XCTFail("waitForExpectationsWithTimeout errored: \(error)")
             }
         }
+    }
+    
+    func testGetImageFromUrl() {
+        let TestAPIResponseData: APIResponseData = APIResponseData()
+        
+        
+        let expect = expectation(description: "Pulls images from a URL and runs the callback closure")
+        
+        let testArray = [["0", "1", "2", "https://res.cloudinary.com/bizzby/image/upload/w_1024,h_576,c_fill/v1450801432/Heroes-NEW2_wnsmmi.jpg"]]
+        
+        TestAPIResponseData.sortArray(responseArray: testArray) { sortedArray, success in
+            XCTAssertTrue(success)
+        
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1) { error in
+            if let error = error {
+                XCTFail("waitForExpectationsWithTimeout errored: \(error)")
+            }
+        }
+
     }
 }
