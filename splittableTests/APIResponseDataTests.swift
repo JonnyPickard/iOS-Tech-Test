@@ -27,6 +27,29 @@ class APIResponseDataTests: XCTestCase {
                 XCTFail("waitForExpectationsWithTimeout errored: \(error)")
             }
         }
-
+    }
+    
+    func testSortArray(){
+        let TestAPIResponseData: APIResponseData = APIResponseData()
+        
+        
+        let expect = expectation(description: "Pulls data from the api and runs the callback closure")
+        
+        let arrayToSort = [["0", "2"], ["0", "1"]]
+        let correctSort = [["0", "1"], ["0", "2"]]
+        
+        TestAPIResponseData.sortArray(responseArray: arrayToSort) { sortedArray, success in
+            XCTAssertTrue(success)
+            
+            XCTAssertEqual(correctSort[0][1], sortedArray[0][1])
+            
+            expect.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1) { error in
+            if let error = error {
+                XCTFail("waitForExpectationsWithTimeout errored: \(error)")
+            }
+        }
     }
 }

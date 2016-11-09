@@ -26,7 +26,7 @@ class APIResponseData {
                 responseArray.append(array)
             }
             
-            self.sortArray(responseArray: responseArray) { sortedArray in
+            self.sortArray(responseArray: responseArray) { sortedArray, success in
                 self.getImageFromURL(sortedArray: sortedArray){ imageDict, success in
                     completion(responseArray, imageDict, true)
                 }
@@ -34,9 +34,9 @@ class APIResponseData {
         }
     }
     
-    func sortArray(responseArray: [[String]], completion: (_ response: [[String]]) -> Void) {
+    func sortArray(responseArray: [[String]], completion: (_ response: [[String]], _ success: Bool) -> Void) {
         let sortedArray = responseArray.sorted { ($0[1]) < ($1[1]) }
-        completion(sortedArray)
+        completion(sortedArray, true)
     }
     
     func getImageFromURL(sortedArray: [[String]], requestManager: APIRequestManager = APIRequestManager(), completion: @escaping (_ imageDict: [String : UIImage], _ success: Bool) -> Void) {
