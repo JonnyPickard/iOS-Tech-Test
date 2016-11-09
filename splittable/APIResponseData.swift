@@ -12,7 +12,7 @@ import PromiseKit
 
 class APIResponseData {
     
-    func getData(requestManager: APIRequestManager = APIRequestManager(), completion: @escaping (_ responseArray: [[String]], _ imageDict: [String : UIImage]) -> Void) {
+    func getData(requestManager: APIRequestManager = APIRequestManager(), completion: @escaping (_ responseArray: [[String]], _ imageDict: [String : UIImage], _ success: Bool) -> Void) {
         var responseArray = [[String]]()
         
         requestManager.getRequest() { jsonResponse, success in
@@ -28,7 +28,7 @@ class APIResponseData {
             
             self.sortArray(responseArray: responseArray) { sortedArray in
                 self.getImageFromURL(sortedArray: sortedArray){ imageDict, success in
-                    completion(responseArray, imageDict)
+                    completion(responseArray, imageDict, true)
                 }
             }
         }

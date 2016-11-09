@@ -14,6 +14,7 @@
 		FBAFF8BF1DD3802F00FB60DC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAFF8BD1DD3802F00FB60DC /* SwiftyJSON.framework */; };
 		FBAFF8C11DD3823100FB60DC /* APIResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFF8C01DD3823100FB60DC /* APIResponseData.swift */; };
 		FBAFF8C31DD3B9D200FB60DC /* APIRequestManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFF8C21DD3B9D200FB60DC /* APIRequestManagerTests.swift */; };
+		FBAFF8C51DD3BF9800FB60DC /* APIResponseDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFF8C41DD3BF9800FB60DC /* APIResponseDataTests.swift */; };
 		FBBE66B31DD37518006B28BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE66B21DD37518006B28BF /* AppDelegate.swift */; };
 		FBBE66B51DD37518006B28BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE66B41DD37518006B28BF /* MainViewController.swift */; };
 		FBBE66B81DD37518006B28BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBE66B61DD37518006B28BF /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		FBAFF8BD1DD3802F00FB60DC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/splittable-cejmqzdhqirbhhbskeysilyarjif/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		FBAFF8C01DD3823100FB60DC /* APIResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponseData.swift; sourceTree = "<group>"; };
 		FBAFF8C21DD3B9D200FB60DC /* APIRequestManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManagerTests.swift; sourceTree = "<group>"; };
+		FBAFF8C41DD3BF9800FB60DC /* APIResponseDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponseDataTests.swift; sourceTree = "<group>"; };
 		FBBE66AF1DD37518006B28BF /* splittable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = splittable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBE66B21DD37518006B28BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBBE66B41DD37518006B28BF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				FBBE66C91DD37518006B28BF /* Info.plist */,
 				FBAFF8C21DD3B9D200FB60DC /* APIRequestManagerTests.swift */,
+				FBAFF8C41DD3BF9800FB60DC /* APIResponseDataTests.swift */,
 			);
 			path = splittableTests;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBAFF8C31DD3B9D200FB60DC /* APIRequestManagerTests.swift in Sources */,
+				FBAFF8C51DD3BF9800FB60DC /* APIResponseDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

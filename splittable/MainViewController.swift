@@ -19,7 +19,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DataModel.getData() { apiResponseArray, imageResponseDict in
+        DataModel.getData() { apiResponseArray, imageResponseDict, succcess in
             self.responseArray = apiResponseArray
             self.imageDict = imageResponseDict
             DispatchQueue.main.async {
