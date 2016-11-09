@@ -7,14 +7,25 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class APIResponseData {
     var responseArray = [[String]]()
     
     func getData(requestManager: APIRequestManager = APIRequestManager()) {
-        requestManager.getRequest() { completion in
-            print(completion)
+        requestManager.getRequest() { jsonResponse in
             print("done")
+            for (_, object) in jsonResponse {
+                var array = [String]()
+                array.append(object["id"].stringValue)
+                array.append(object["sort_order"].stringValue)
+                array.append(object["name"].stringValue)
+                array.append(object["image_url"].stringValue)
+                array.append(object["url"].stringValue)
+                self.responseArray.append(array)
+            }
         }
     }
+    
+    
 }
