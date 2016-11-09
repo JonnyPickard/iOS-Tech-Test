@@ -14,7 +14,6 @@ class APIResponseData {
     
     func getData(requestManager: APIRequestManager = APIRequestManager()) {
         requestManager.getRequest() { jsonResponse in
-            print("done")
             for (_, object) in jsonResponse {
                 var array = [String]()
                 array.append(object["id"].stringValue)
@@ -30,7 +29,33 @@ class APIResponseData {
     
     func sortArray() {
         responseArray.sort { ($0[1]) < ($1[1]) }
+        getImageFromURL(){ imageDict in
+            print(imageDict)
+        }
     }
     
-    
+    func getImageFromURL(requestManager: APIRequestManager = APIRequestManager(), completion: @escaping (_ imageDict: [String : UIImage]) -> Void) {
+        let myGroup = DispatchGroup()
+        let backgroundQ = DispatchQueue.global(qos: .default)
+        var imageDict = [String : UIImage]()
+        
+        for array in responseArray {
+            myGroup.enter()
+            
+            let imageUrl = array[3]
+            let imageID = array[0]
+            
+            requestManager.getImageFromUrl(url: imageUrl) { imageResponse in
+                imageDict[imageID] = imageResponse
+                
+                myGroup.leave()
+            }
+            
+        }
+        
+        myGroup.notify(queue: backgroundQ, execute: {
+            print("Finished downloading images")
+            completion(imageDict)
+        })
+    }
 }

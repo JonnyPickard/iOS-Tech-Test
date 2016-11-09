@@ -6,5 +6,6 @@ use_frameworks!
 
 target 'splittable' do
     pod 'Alamofire'
+    pod 'AlamofireImage'
     pod 'SwiftyJSON'
 end
