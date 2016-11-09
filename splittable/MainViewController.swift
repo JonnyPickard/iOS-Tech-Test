@@ -8,7 +8,10 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     let DataModel = APIResponseData()
     var responseArray = [[String]]()
     var imageDict = [String : UIImage]()
@@ -19,8 +22,27 @@ class MainViewController: UIViewController {
         DataModel.getData() { apiResponseArray, imageResponseDict in
             self.responseArray = apiResponseArray
             self.imageDict = imageResponseDict
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return responseArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "splittableCell") {
+            let responseID = responseArray[indexPath.row][0]
+            
+            cell.textLabel?.text = responseArray[indexPath.row][2]
+            cell.detailTextLabel?.text = responseArray[indexPath.row][4]
+            cell.imageView?.image = imageDict[responseID]
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
 }
 
