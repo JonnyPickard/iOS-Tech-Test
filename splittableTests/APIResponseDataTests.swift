@@ -53,7 +53,7 @@ class APIResponseDataTests: XCTestCase {
         }
     }
     
-    func testGetImageFromUrl() {
+    func testGetImagesFromUrl() {
         let TestAPIResponseData: APIResponseData = APIResponseData()
         
         
@@ -61,7 +61,7 @@ class APIResponseDataTests: XCTestCase {
         
         let testArray = [["0", "1", "2", "https://res.cloudinary.com/bizzby/image/upload/w_1024,h_576,c_fill/v1450801432/Heroes-NEW2_wnsmmi.jpg"]]
         
-        TestAPIResponseData.sortArray(responseArray: testArray) { sortedArray, success in
+        TestAPIResponseData.getImagesFromURL(sortedArray: testArray) { sortedArray, success in
             XCTAssertTrue(success)
         
             expect.fulfill()
