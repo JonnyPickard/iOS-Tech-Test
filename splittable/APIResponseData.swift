@@ -27,7 +27,7 @@ class APIResponseData {
             }
             
             self.sortArray(responseArray: responseArray) { sortedArray in
-                self.getImageFromURL(sortedArray: sortedArray){ imageDict in
+                self.getImageFromURL(sortedArray: sortedArray){ imageDict, success in
                     completion(responseArray, imageDict)
                 }
             }
@@ -39,7 +39,7 @@ class APIResponseData {
         completion(sortedArray)
     }
     
-    func getImageFromURL(sortedArray: [[String]], requestManager: APIRequestManager = APIRequestManager(), completion: @escaping (_ imageDict: [String : UIImage]) -> Void) {
+    func getImageFromURL(sortedArray: [[String]], requestManager: APIRequestManager = APIRequestManager(), completion: @escaping (_ imageDict: [String : UIImage], _ success: Bool) -> Void) {
         let myGroup = DispatchGroup()
         let backgroundQ = DispatchQueue.global(qos: .default)
         let apiArray = sortedArray
@@ -53,7 +53,7 @@ class APIResponseData {
             let imageID = array[0]
             
             requestManager.getImageFromUrl(url: imageUrl) { imageResponse in
-                imageDict[imageID] = imageResponse
+                imageDict[imageID] = imageResponse.0
                 
                 myGroup.leave()
             }
@@ -62,7 +62,7 @@ class APIResponseData {
         
         myGroup.notify(queue: backgroundQ, execute: {
             print("Finished downloading images")
-            completion(imageDict)
+            completion(imageDict, true)
         })
     }
     

@@ -26,11 +26,11 @@ class APIRequestManager: NSObject {
         }
     }
     
-    func getImageFromUrl(url: String, completion: @escaping (UIImage) -> Void) {
+    func getImageFromUrl(url: String, completion: @escaping (UIImage, _ success: Bool) -> Void) {
         Alamofire.request(url).responseImage { response in
             
             if let image = response.result.value {
-                completion(image)
+                completion(image, true)
             }
             
         }

@@ -13,12 +13,12 @@
 		FBAFF8BE1DD3802F00FB60DC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAFF8BC1DD3802F00FB60DC /* Alamofire.framework */; };
 		FBAFF8BF1DD3802F00FB60DC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAFF8BD1DD3802F00FB60DC /* SwiftyJSON.framework */; };
 		FBAFF8C11DD3823100FB60DC /* APIResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFF8C01DD3823100FB60DC /* APIResponseData.swift */; };
+		FBAFF8C31DD3B9D200FB60DC /* APIRequestManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFF8C21DD3B9D200FB60DC /* APIRequestManagerTests.swift */; };
 		FBBE66B31DD37518006B28BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE66B21DD37518006B28BF /* AppDelegate.swift */; };
 		FBBE66B51DD37518006B28BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE66B41DD37518006B28BF /* MainViewController.swift */; };
 		FBBE66B81DD37518006B28BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBE66B61DD37518006B28BF /* Main.storyboard */; };
 		FBBE66BA1DD37518006B28BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBBE66B91DD37518006B28BF /* Assets.xcassets */; };
 		FBBE66BD1DD37518006B28BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBE66BB1DD37518006B28BF /* LaunchScreen.storyboard */; };
-		FBBE66C81DD37518006B28BF /* splittableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE66C71DD37518006B28BF /* splittableTests.swift */; };
 		FBBE66D31DD37518006B28BF /* splittableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE66D21DD37518006B28BF /* splittableUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +48,7 @@
 		FBAFF8BC1DD3802F00FB60DC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/splittable-cejmqzdhqirbhhbskeysilyarjif/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		FBAFF8BD1DD3802F00FB60DC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/splittable-cejmqzdhqirbhhbskeysilyarjif/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		FBAFF8C01DD3823100FB60DC /* APIResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponseData.swift; sourceTree = "<group>"; };
+		FBAFF8C21DD3B9D200FB60DC /* APIRequestManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManagerTests.swift; sourceTree = "<group>"; };
 		FBBE66AF1DD37518006B28BF /* splittable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = splittable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBE66B21DD37518006B28BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBBE66B41DD37518006B28BF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		FBBE66BC1DD37518006B28BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBBE66BE1DD37518006B28BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBBE66C31DD37518006B28BF /* splittableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = splittableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBBE66C71DD37518006B28BF /* splittableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splittableTests.swift; sourceTree = "<group>"; };
 		FBBE66C91DD37518006B28BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBBE66CE1DD37518006B28BF /* splittableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = splittableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBE66D21DD37518006B28BF /* splittableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splittableUITests.swift; sourceTree = "<group>"; };
@@ -175,8 +175,8 @@
 		FBBE66C61DD37518006B28BF /* splittableTests */ = {
 			isa = PBXGroup;
 			children = (
-				FBBE66C71DD37518006B28BF /* splittableTests.swift */,
 				FBBE66C91DD37518006B28BF /* Info.plist */,
+				FBAFF8C21DD3B9D200FB60DC /* APIRequestManagerTests.swift */,
 			);
 			path = splittableTests;
 			sourceTree = "<group>";
@@ -387,7 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBBE66C81DD37518006B28BF /* splittableTests.swift in Sources */,
+				FBAFF8C31DD3B9D200FB60DC /* APIRequestManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
