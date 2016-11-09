@@ -24,7 +24,12 @@ class APIResponseData {
                 array.append(object["url"].stringValue)
                 self.responseArray.append(array)
             }
+            self.sortArray()
         }
+    }
+    
+    func sortArray() {
+        responseArray.sort { ($0[1]) < ($1[1]) }
     }
     
     
