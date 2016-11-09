@@ -9,15 +9,13 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    let DataModel = APIResponseData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DataModel.getData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
 
 }
 

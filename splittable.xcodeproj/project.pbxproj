@@ -12,6 +12,7 @@
 		FBAFF8BB1DD37BBD00FB60DC /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = FBAFF8BA1DD37BBD00FB60DC /* Podfile */; };
 		FBAFF8BE1DD3802F00FB60DC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAFF8BC1DD3802F00FB60DC /* Alamofire.framework */; };
 		FBAFF8BF1DD3802F00FB60DC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAFF8BD1DD3802F00FB60DC /* SwiftyJSON.framework */; };
+		FBAFF8C11DD3823100FB60DC /* APIResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFF8C01DD3823100FB60DC /* APIResponseData.swift */; };
 		FBBE66B31DD37518006B28BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE66B21DD37518006B28BF /* AppDelegate.swift */; };
 		FBBE66B51DD37518006B28BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE66B41DD37518006B28BF /* MainViewController.swift */; };
 		FBBE66B81DD37518006B28BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBE66B61DD37518006B28BF /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		FBAFF8BA1DD37BBD00FB60DC /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		FBAFF8BC1DD3802F00FB60DC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/splittable-cejmqzdhqirbhhbskeysilyarjif/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		FBAFF8BD1DD3802F00FB60DC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/splittable-cejmqzdhqirbhhbskeysilyarjif/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		FBAFF8C01DD3823100FB60DC /* APIResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponseData.swift; sourceTree = "<group>"; };
 		FBBE66AF1DD37518006B28BF /* splittable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = splittable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBE66B21DD37518006B28BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBBE66B41DD37518006B28BF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				FBAFF8B81DD37B8800FB60DC /* APIRequestManager.swift */,
+				FBAFF8C01DD3823100FB60DC /* APIResponseData.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -159,8 +162,8 @@
 		FBBE66B11DD37518006B28BF /* splittable */ = {
 			isa = PBXGroup;
 			children = (
-				FBAFF8B71DD375C400FB60DC /* models */,
 				FBBE66B21DD37518006B28BF /* AppDelegate.swift */,
+				FBAFF8B71DD375C400FB60DC /* models */,
 				FBAFF8B51DD375B100FB60DC /* controllers */,
 				FBAFF8B61DD375BA00FB60DC /* views */,
 				FBBE66B91DD37518006B28BF /* Assets.xcassets */,
@@ -376,6 +379,7 @@
 				FBAFF8B91DD37B8800FB60DC /* APIRequestManager.swift in Sources */,
 				FBBE66B51DD37518006B28BF /* MainViewController.swift in Sources */,
 				FBBE66B31DD37518006B28BF /* AppDelegate.swift in Sources */,
+				FBAFF8C11DD3823100FB60DC /* APIResponseData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

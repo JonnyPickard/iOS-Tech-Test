@@ -11,5 +11,18 @@ import Alamofire
 import SwiftyJSON
 
 class APIRequestManager: NSObject {
+
     
+    func getRequest(url: String = "https://sheetsu.com/apis/v1.0/aaf79d4763af", completion: @escaping (JSON) -> Void) {
+        print("here")
+        Alamofire.request(url).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                completion(json)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
