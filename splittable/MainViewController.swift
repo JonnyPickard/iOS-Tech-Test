@@ -144,19 +144,25 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.tableViewImage?.image = imageDict[responseID]
             
             let url = responseArray[indexPath.row][4]
-            if url == "" {
-                cell.accessoryType = UITableViewCellAccessoryType.none
-                cell.selectionStyle = .none
-                cell.tableViewTitleLabel?.text = ""
-            } else {
-                cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
-                cell.tableViewTitleLabel?.text = responseArray[indexPath.row][2]
-            }
-            
-            return cell
+            let name = responseArray[indexPath.row][2]
+
+            return checkForURL(url: url, name: name, cell: cell)
         } else {
             return UITableViewCell()
         }
+    }
+    
+    func checkForURL(url: String, name: String, cell: TableViewCell) -> TableViewCell {
+        if url == "" {
+            cell.accessoryType = UITableViewCellAccessoryType.none
+            cell.selectionStyle = .none
+            cell.tableViewTitleLabel?.text = ""
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            cell.tableViewTitleLabel?.text = name
+        }
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
