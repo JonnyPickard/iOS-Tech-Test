@@ -115,10 +115,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             let noDataLabel: UILabel = UILabel(frame: frame)
             
-            noDataLabel.text = "Click 'Get Content' below to get content"
+            noDataLabel.text = "Click the 'Get Content' button below to get content."
             
             noDataLabel.numberOfLines = 0
-            noDataLabel.textColor = UIColor(red: 22.0/255.0, green: 106.0/255.0, blue: 176.0/255.0, alpha: 1.0)
+            noDataLabel.textColor = UIColor.gray
             
             noDataLabel.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightLight)
             
