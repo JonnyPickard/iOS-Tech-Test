@@ -11,23 +11,42 @@ import UIKit
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var getContentButton: UIButton!
     
-    let DataModel = APIResponseData()
+    @IBAction func getContentButton(_ sender: Any) {
+        getContent()
+    }
+    
     var responseArray = [[String]]()
     var imageDict = [String : UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let storedData = StoreData()
-        print(storedData.checkForStoredData())
+    }
+    
+    func getContent() {
+        let DataModel = APIResponseData()
         
         DataModel.getData() { apiResponseArray, imageResponseDict, succcess in
             self.responseArray = apiResponseArray
             self.imageDict = imageResponseDict
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.changeGetContentButton()
             }
+        }
+    }
+    
+    func changeGetContentButton(){
+        if responseArray.count > 1 {
+            getContentButton.setTitle(" Remove Content ", for: .normal)
+            getContentButton.setTitleColor(UIColor.white, for: .normal)
+            getContentButton.backgroundColor = UIColor.red
+        } else {
+            getContentButton.setTitle(" Get Content ", for: .normal)
+            getContentButton.setTitleColor(UIColor.blue, for: .normal)
+            getContentButton.backgroundColor = UIColor.white
         }
     }
 

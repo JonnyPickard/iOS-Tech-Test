@@ -105,6 +105,9 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="getContentButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yxH-SA-ZXU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.86479880919999996" green="1" blue="0.66483047449999999" alpha="0.35310299299999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -130,6 +133,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="getContentButton" destination="g4D-Hh-XGI" id="1OI-hZ-UD0"/>
                         <outlet property="tableView" destination="7NQ-lZ-Ogn" id="23E-2V-YVH"/>
                     </connections>
                 </viewController>
