@@ -36,6 +36,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         dataStore.saveData(responseArray, imageDict)
     }
     
+    func deleteStoredData() {
+        let dataStore = StoreData()
+        
+        dataStore.deleteStoredData()
+    }
+    
     func loadSavedData() {
         let dataStore = StoreData()
         
@@ -67,6 +73,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func deleteContent() {
         responseArray = [[String]]()
         imageDict = [String : UIImage]()
+        deleteStoredData()
         tableView.reloadData()
         changeGetContentButton()
     }

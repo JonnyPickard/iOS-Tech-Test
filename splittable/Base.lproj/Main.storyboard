@@ -54,13 +54,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="beT-fJ-ic1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="135" height="90"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="153" height="90"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="beT-fJ-ic1" secondAttribute="height" multiplier="75:50" id="WJj-mH-CQa"/>
+                                                        <constraint firstAttribute="width" secondItem="beT-fJ-ic1" secondAttribute="height" multiplier="85:50" id="WJj-mH-CQa"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6CA-sy-bDH">
-                                                    <rect key="frame" x="145" y="8" width="212" height="73.5"/>
+                                                    <rect key="frame" x="163" y="8" width="194" height="73.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vns-zO-pyr">
                                                             <rect key="frame" x="0.0" y="0.0" width="39" height="73.5"/>
