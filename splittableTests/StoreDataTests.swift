@@ -33,7 +33,6 @@ class StoreDataTests: XCTestCase {
     }
     
     func testLoadStoredDataTrue(){
-        
         //Setup
         let TestStoreData: StoreData = StoreData()
         
@@ -93,6 +92,28 @@ class StoreDataTests: XCTestCase {
         
         //Teardown
         cleanNSUserDefaults()
+    }
+    
+    func testDeleteStoredData() {
+        //Setup
+        let TestStoreData: StoreData = StoreData()
+        
+        let mockApiDataArray = [["mock"]]
+        let mockImageDict = ["mock" : UIImage()]
+        
+        let defaults = UserDefaults.standard
+        
+        let keyedArchApiArray = NSKeyedArchiver.archivedData(withRootObject: mockApiDataArray)
+        defaults.set(keyedArchApiArray, forKey: "ApiResponseData")
+        
+        let keyedArchImageDict = NSKeyedArchiver.archivedData(withRootObject: mockImageDict)
+        defaults.set(keyedArchImageDict, forKey: "ImageDict")
+        
+        //Execute
+        TestStoreData.deleteStoredData()
+        
+        XCTAssertTrue(UserDefaults.standard.object(forKey: "ApiResponseData") == nil)
+        XCTAssertTrue(UserDefaults.standard.object(forKey: "ImageDict") == nil)
     }
     
     func cleanNSUserDefaults() {

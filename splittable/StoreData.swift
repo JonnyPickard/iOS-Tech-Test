@@ -43,6 +43,11 @@ class StoreData {
         defaults.set(keyedArchImageDict, forKey: "ImageDict")
     }
     
+    func deleteStoredData(key1: String = "ApiResponseData", key2: String = "ImageDict") {
+        UserDefaults.standard.removeObject(forKey: key1)
+        UserDefaults.standard.removeObject(forKey: key2)
+    }
+    
     func getDictionary(key: String = "ImageDict", completion: @escaping ([String : UIImage]?) -> Void) {
         let data = UserDefaults.standard.object(forKey: key)!
         let object = NSKeyedUnarchiver.unarchiveObject(with: data as! Data)
