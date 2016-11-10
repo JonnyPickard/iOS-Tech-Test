@@ -11,7 +11,7 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 
-class APIRequestManager: NSObject {
+class APIRequestManager {
 
     
     func getRequest(url: String = "https://sheetsu.com/apis/v1.0/aaf79d4763af", completion: @escaping (JSON, _ success: Bool) -> Void) {

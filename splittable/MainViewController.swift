@@ -19,6 +19,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let storedData = StoreData()
+        print(storedData.checkForStoredData())
+        
         DataModel.getData() { apiResponseArray, imageResponseDict, succcess in
             self.responseArray = apiResponseArray
             self.imageDict = imageResponseDict

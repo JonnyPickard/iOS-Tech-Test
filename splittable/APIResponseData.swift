@@ -16,7 +16,9 @@ class APIResponseData {
         var responseArray = [[String]]()
         
         requestManager.getRequest() { jsonResponse, success in
+            
             for (_, object) in jsonResponse {
+                
                 var array = [String]()
                 array.append(object["id"].stringValue)
                 array.append(object["sort_order"].stringValue)
@@ -24,10 +26,13 @@ class APIResponseData {
                 array.append(object["image_url"].stringValue)
                 array.append(object["url"].stringValue)
                 responseArray.append(array)
+                
             }
             
             self.sortArray(responseArray: responseArray) { sortedArray, success in
+                
                 self.getImagesFromURL(sortedArray: sortedArray){ imageDict, success in
+                    
                     completion(responseArray, imageDict, true)
                 }
             }

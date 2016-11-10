@@ -20,7 +20,8 @@
 		FBBE66B81DD37518006B28BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBE66B61DD37518006B28BF /* Main.storyboard */; };
 		FBBE66BA1DD37518006B28BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBBE66B91DD37518006B28BF /* Assets.xcassets */; };
 		FBBE66BD1DD37518006B28BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBE66BB1DD37518006B28BF /* LaunchScreen.storyboard */; };
-		FBBE66D31DD37518006B28BF /* splittableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE66D21DD37518006B28BF /* splittableUITests.swift */; };
+		FBC097251DD4799C00EBDE72 /* StoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC097241DD4799C00EBDE72 /* StoreData.swift */; };
+		FBC097271DD47FC400EBDE72 /* StoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC097261DD47FC400EBDE72 /* StoreDataTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +62,9 @@
 		FBBE66C31DD37518006B28BF /* splittableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = splittableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBBE66C91DD37518006B28BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBBE66CE1DD37518006B28BF /* splittableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = splittableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBBE66D21DD37518006B28BF /* splittableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splittableUITests.swift; sourceTree = "<group>"; };
 		FBBE66D41DD37518006B28BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBC097241DD4799C00EBDE72 /* StoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreData.swift; sourceTree = "<group>"; };
+		FBC097261DD47FC400EBDE72 /* StoreDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreDataTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				FBAFF8B81DD37B8800FB60DC /* APIRequestManager.swift */,
 				FBAFF8C01DD3823100FB60DC /* APIResponseData.swift */,
+				FBC097241DD4799C00EBDE72 /* StoreData.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				FBBE66C91DD37518006B28BF /* Info.plist */,
 				FBAFF8C21DD3B9D200FB60DC /* APIRequestManagerTests.swift */,
 				FBAFF8C41DD3BF9800FB60DC /* APIResponseDataTests.swift */,
+				FBC097261DD47FC400EBDE72 /* StoreDataTests.swift */,
 			);
 			path = splittableTests;
 			sourceTree = "<group>";
@@ -187,7 +191,6 @@
 		FBBE66D11DD37518006B28BF /* splittableUITests */ = {
 			isa = PBXGroup;
 			children = (
-				FBBE66D21DD37518006B28BF /* splittableUITests.swift */,
 				FBBE66D41DD37518006B28BF /* Info.plist */,
 			);
 			path = splittableUITests;
@@ -380,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBAFF8B91DD37B8800FB60DC /* APIRequestManager.swift in Sources */,
+				FBC097251DD4799C00EBDE72 /* StoreData.swift in Sources */,
 				FBBE66B51DD37518006B28BF /* MainViewController.swift in Sources */,
 				FBBE66B31DD37518006B28BF /* AppDelegate.swift in Sources */,
 				FBAFF8C11DD3823100FB60DC /* APIResponseData.swift in Sources */,
@@ -391,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBAFF8C31DD3B9D200FB60DC /* APIRequestManagerTests.swift in Sources */,
+				FBC097271DD47FC400EBDE72 /* StoreDataTests.swift in Sources */,
 				FBAFF8C51DD3BF9800FB60DC /* APIResponseDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,7 +404,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBBE66D31DD37518006B28BF /* splittableUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
