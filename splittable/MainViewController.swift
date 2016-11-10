@@ -41,6 +41,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             cell.tableViewTitleLabel?.text = responseArray[indexPath.row][2]
             cell.tableViewImage?.image = imageDict[responseID]
+            
+            let url = responseArray[indexPath.row][4]
+            if url == "" {
+                cell.accessoryType = UITableViewCellAccessoryType.none
+                cell.selectionStyle = .none
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            }
+            
             return cell
         } else {
             return UITableViewCell()
