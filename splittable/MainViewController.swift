@@ -36,12 +36,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "splittableCell") {
+        if let cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: "splittableCell") as! TableViewCell? {
             let responseID = responseArray[indexPath.row][0]
             
-            cell.textLabel?.text = responseArray[indexPath.row][2]
-            cell.detailTextLabel?.text = responseArray[indexPath.row][4]
-            cell.imageView?.image = imageDict[responseID]
+            cell.tableViewTitleLabel?.text = responseArray[indexPath.row][2]
+            cell.tableViewSubtitleLabel?.text = responseArray[indexPath.row][4]
+            cell.tableViewImage?.image = imageDict[responseID]
             return cell
         } else {
             return UITableViewCell()

@@ -22,6 +22,7 @@
 		FBBE66BD1DD37518006B28BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBBE66BB1DD37518006B28BF /* LaunchScreen.storyboard */; };
 		FBC097251DD4799C00EBDE72 /* StoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC097241DD4799C00EBDE72 /* StoreData.swift */; };
 		FBC097271DD47FC400EBDE72 /* StoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC097261DD47FC400EBDE72 /* StoreDataTests.swift */; };
+		FBC097291DD4A46200EBDE72 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC097281DD4A46200EBDE72 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		FBBE66D41DD37518006B28BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBC097241DD4799C00EBDE72 /* StoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreData.swift; sourceTree = "<group>"; };
 		FBC097261DD47FC400EBDE72 /* StoreDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreDataTests.swift; sourceTree = "<group>"; };
+		FBC097281DD4A46200EBDE72 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				FBBE66B41DD37518006B28BF /* MainViewController.swift */,
+				FBC097281DD4A46200EBDE72 /* TableViewCell.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				FBAFF8B91DD37B8800FB60DC /* APIRequestManager.swift in Sources */,
 				FBC097251DD4799C00EBDE72 /* StoreData.swift in Sources */,
 				FBBE66B51DD37518006B28BF /* MainViewController.swift in Sources */,
+				FBC097291DD4A46200EBDE72 /* TableViewCell.swift in Sources */,
 				FBBE66B31DD37518006B28BF /* AppDelegate.swift in Sources */,
 				FBAFF8C11DD3823100FB60DC /* APIResponseData.swift in Sources */,
 			);
