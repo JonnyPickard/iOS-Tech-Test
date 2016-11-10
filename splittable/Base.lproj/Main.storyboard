@@ -92,6 +92,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="d3e-zu-O4o"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9Ce-QT-4pN">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZc-qf-pV8" userLabel="FooterView">
                                 <rect key="frame" x="0.0" y="627" width="375" height="40"/>
                                 <subviews>
@@ -121,6 +124,7 @@
                         <color key="backgroundColor" red="0.86479880919999996" green="1" blue="0.66483047449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Ide-m0-RMb" secondAttribute="trailing" id="2ia-eJ-1NS"/>
+                            <constraint firstItem="9Ce-QT-4pN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GbB-qd-6b0"/>
                             <constraint firstItem="Ide-m0-RMb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Mkv-UN-X8c"/>
                             <constraint firstAttribute="trailing" secondItem="oZc-qf-pV8" secondAttribute="trailing" id="PdQ-wY-8Rj"/>
                             <constraint firstItem="7NQ-lZ-Ogn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Spl-P6-cwA"/>
@@ -130,10 +134,12 @@
                             <constraint firstItem="Ide-m0-RMb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Zee-Yo-tUs"/>
                             <constraint firstItem="7NQ-lZ-Ogn" firstAttribute="top" secondItem="Ide-m0-RMb" secondAttribute="bottom" id="keV-ka-nPJ"/>
                             <constraint firstAttribute="trailing" secondItem="7NQ-lZ-Ogn" secondAttribute="trailing" id="vSY-EB-tA9"/>
+                            <constraint firstItem="9Ce-QT-4pN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yp1-GU-aSk"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="getContentButton" destination="g4D-Hh-XGI" id="1OI-hZ-UD0"/>
+                        <outlet property="spinner" destination="9Ce-QT-4pN" id="UjM-Rf-2Vn"/>
                         <outlet property="tableView" destination="7NQ-lZ-Ogn" id="23E-2V-YVH"/>
                     </connections>
                 </viewController>

@@ -10,6 +10,8 @@ import UIKit
 
 class StoreData {
     
+    let defaults = UserDefaults.standard
+    
     func loadStoredData(completion: @escaping (_ apiResonseArray: [[String]]?, _ imageDict: [String : UIImage]?, _ success: Bool) -> Void) {
         
         if checkForStoredData() {
@@ -24,7 +26,6 @@ class StoreData {
     }
     
     func checkForStoredData() -> Bool {
-        let defaults = UserDefaults.standard
         
         if defaults.object(forKey: "ApiResponseData") != nil || (defaults.object(forKey: "ImageDict") != nil) {
             return true
@@ -34,7 +35,6 @@ class StoreData {
     }
     
     func saveData(_ dataArray: [[String]], _ imageDict: [String : UIImage]) {
-        let defaults = UserDefaults.standard
         
         let keyedArchApiArray = NSKeyedArchiver.archivedData(withRootObject: dataArray)
         defaults.set(keyedArchApiArray, forKey: "ApiResponseData")

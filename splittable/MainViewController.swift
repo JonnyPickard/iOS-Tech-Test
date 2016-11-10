@@ -12,6 +12,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var getContentButton: UIButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     @IBAction func getContentButton(_ sender: Any) {
         if isContentPresent() {
@@ -60,17 +61,22 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func getContent() {
         let DataModel = APIResponseData()
-        
-        DataModel.getData() { apiResponseArray, imageResponseDict, succcess in
-            self.responseArray = apiResponseArray
-            self.imageDict = imageResponseDict
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.changeGetContentButton()
-                self.saveData()
-                self.noContentInTableView(hidden: true)
+        spinner.startAnimating()
+        DispatchQueue.global(qos: .default).async {
+            
+            DataModel.getData() { apiResponseArray, imageResponseDict, succcess in
+                self.responseArray = apiResponseArray
+                self.imageDict = imageResponseDict
+                DispatchQueue.main.async {
+                    self.spinner.stopAnimating()
+                    self.tableView.reloadData()
+                    self.changeGetContentButton()
+                    self.saveData()
+                    self.noContentInTableView(hidden: true)
+                }
             }
         }
+        
     }
     
     func deleteContent() {

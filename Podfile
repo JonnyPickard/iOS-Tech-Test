@@ -10,3 +10,7 @@ target 'splittable' do
     pod 'SwiftyJSON'
     pod 'PromiseKit'
 end
+
+target 'splittableTests' do
+    pod 'SwiftyJSON'
+end
