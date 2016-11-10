@@ -40,12 +40,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let responseID = responseArray[indexPath.row][0]
             
             cell.tableViewTitleLabel?.text = responseArray[indexPath.row][2]
-            cell.tableViewSubtitleLabel?.text = responseArray[indexPath.row][4]
             cell.tableViewImage?.image = imageDict[responseID]
             return cell
         } else {
             return UITableViewCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let openExternalURL: OpenExternalUrl = OpenExternalUrl()
+        let url = responseArray[indexPath.row][4]
+        
+        openExternalURL.accessURLFromIdentifier(urlToAccess: url)
     }
 }
 
