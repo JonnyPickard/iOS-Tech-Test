@@ -27,6 +27,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadSavedData()
+    }
+    
+    func loadSavedData() {
+        let dataStore = StoreData()
+        
+        dataStore.loadStoredData() { apiSavedDataArr, imageSaveDict, success in
+            if success {
+                self.responseArray = apiSavedDataArr!
+                self.imageDict = imageSaveDict!
+                
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func getContent() {

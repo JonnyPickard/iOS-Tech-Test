@@ -172,8 +172,8 @@
 		FBBE66B11DD37518006B28BF /* splittable */ = {
 			isa = PBXGroup;
 			children = (
-				FBC0972C1DD4A8CB00EBDE72 /* Helpers */,
 				FBBE66B21DD37518006B28BF /* AppDelegate.swift */,
+				FBC0972C1DD4A8CB00EBDE72 /* Helpers */,
 				FBAFF8B71DD375C400FB60DC /* models */,
 				FBAFF8B51DD375B100FB60DC /* controllers */,
 				FBAFF8B61DD375BA00FB60DC /* views */,
