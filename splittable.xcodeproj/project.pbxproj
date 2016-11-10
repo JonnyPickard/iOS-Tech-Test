@@ -26,6 +26,7 @@
 		FBC097291DD4A46200EBDE72 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC097281DD4A46200EBDE72 /* TableViewCell.swift */; };
 		FBC0972B1DD4A87A00EBDE72 /* OpenExternalUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0972A1DD4A87A00EBDE72 /* OpenExternalUrl.swift */; };
 		FBC0972D1DD4E34E00EBDE72 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAFF8BD1DD3802F00FB60DC /* SwiftyJSON.framework */; };
+		FBC097331DD4ED0400EBDE72 /* UIColourExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC097321DD4ED0400EBDE72 /* UIColourExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		FBC097261DD47FC400EBDE72 /* StoreDataTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreDataTests.swift; sourceTree = "<group>"; };
 		FBC097281DD4A46200EBDE72 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		FBC0972A1DD4A87A00EBDE72 /* OpenExternalUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenExternalUrl.swift; sourceTree = "<group>"; };
+		FBC097321DD4ED0400EBDE72 /* UIColourExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColourExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 		FBBE66B11DD37518006B28BF /* splittable */ = {
 			isa = PBXGroup;
 			children = (
+				FBC097311DD4ECEE00EBDE72 /* extensions */,
 				FBBE66B21DD37518006B28BF /* AppDelegate.swift */,
 				FBC0972C1DD4A8CB00EBDE72 /* helpers */,
 				FBAFF8B71DD375C400FB60DC /* models */,
@@ -218,6 +221,14 @@
 				FBC0972A1DD4A87A00EBDE72 /* OpenExternalUrl.swift */,
 			);
 			name = helpers;
+			sourceTree = "<group>";
+		};
+		FBC097311DD4ECEE00EBDE72 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FBC097321DD4ED0400EBDE72 /* UIColourExtensions.swift */,
+			);
+			name = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,6 +471,7 @@
 				FBC0972B1DD4A87A00EBDE72 /* OpenExternalUrl.swift in Sources */,
 				FBBE66B51DD37518006B28BF /* MainViewController.swift in Sources */,
 				FBC097291DD4A46200EBDE72 /* TableViewCell.swift in Sources */,
+				FBC097331DD4ED0400EBDE72 /* UIColourExtensions.swift in Sources */,
 				FBBE66B31DD37518006B28BF /* AppDelegate.swift in Sources */,
 				FBAFF8C11DD3823100FB60DC /* APIResponseData.swift in Sources */,
 			);

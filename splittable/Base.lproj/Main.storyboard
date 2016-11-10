@@ -31,9 +31,11 @@
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Light" family="American Typewriter" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="1" alpha="0.3710134845890411" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="0.0" height="1"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.86479880919819108" green="1" blue="0.66483047450387112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.2156862745" green="0.70588235290000001" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="P8g-Rz-jyD" secondAttribute="bottom" id="EhE-Cb-W8z"/>
                                     <constraint firstAttribute="trailing" secondItem="P8g-Rz-jyD" secondAttribute="trailing" id="kG7-hn-Tz3"/>
@@ -121,7 +123,9 @@
                                         <rect key="frame" x="135" y="4" width="105" height="32"/>
                                         <color key="backgroundColor" red="0.98756825751697375" green="1" blue="0.99089600948657364" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Light" family="American Typewriter" pointSize="17"/>
-                                        <state key="normal" title=" Get Content "/>
+                                        <state key="normal" title=" Get Content ">
+                                            <color key="titleColor" red="0.0" green="0.54473986710929623" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="10"/>
@@ -132,7 +136,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.86479880919999996" green="1" blue="0.66483047449999999" alpha="0.35310299299999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.21568627450980393" green="0.70588235294117641" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="g4D-Hh-XGI" firstAttribute="centerY" secondItem="oZc-qf-pV8" secondAttribute="centerY" id="BfR-rx-5bN"/>
                                     <constraint firstItem="g4D-Hh-XGI" firstAttribute="centerX" secondItem="oZc-qf-pV8" secondAttribute="centerX" id="g6N-eR-5ID"/>
@@ -140,7 +144,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.86479880919999996" green="1" blue="0.66483047449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.2156862745" green="0.70588235290000001" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Ide-m0-RMb" secondAttribute="trailing" id="2ia-eJ-1NS"/>
                             <constraint firstAttribute="trailing" secondItem="iFf-Qt-35C" secondAttribute="trailing" id="74j-sD-c4T"/>

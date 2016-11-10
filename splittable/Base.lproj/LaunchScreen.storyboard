@@ -30,7 +30,7 @@
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.86479880919999996" green="1" blue="0.66483047449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.2156862745" green="0.70588235290000001" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fgI-5t-78V" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BTC-qf-k00"/>
                             <constraint firstItem="fgI-5t-78V" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Zh7-NZ-JHT"/>

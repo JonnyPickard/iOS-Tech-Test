@@ -103,7 +103,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             getContentButton.backgroundColor = UIColor.red
         } else {
             getContentButton.setTitle(" Get Content ", for: .normal)
-            getContentButton.setTitleColor(UIColor.blue, for: .normal)
+            getContentButton.setTitleColor(UIColor().lightBlue(), for: .normal)
             getContentButton.backgroundColor = UIColor.white
         }
     }
