@@ -33,6 +33,16 @@ class StoreData {
         }
     }
     
+    func saveData(_ dataArray: [[String]], _ imageDict: [String : UIImage]) {
+        let defaults = UserDefaults.standard
+        
+        let keyedArchApiArray = NSKeyedArchiver.archivedData(withRootObject: dataArray)
+        defaults.set(keyedArchApiArray, forKey: "ApiResponseData")
+        
+        let keyedArchImageDict = NSKeyedArchiver.archivedData(withRootObject: imageDict)
+        defaults.set(keyedArchImageDict, forKey: "ImageDict")
+    }
+    
     func getDictionary(key: String = "ImageDict", completion: @escaping ([String : UIImage]?) -> Void) {
         let data = UserDefaults.standard.object(forKey: key)!
         let object = NSKeyedUnarchiver.unarchiveObject(with: data as! Data)

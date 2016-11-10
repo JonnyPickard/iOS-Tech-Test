@@ -20,12 +20,11 @@ class StoreDataTests: XCTestCase {
         TestStoreData.loadStoredData() { apiDataArray, imageDict, success in
             XCTAssertFalse(success)
             
-            
             expect.fulfill()
             self.cleanNSUserDefaults()
         }
         
-        waitForExpectations(timeout: 5) { error in
+        waitForExpectations(timeout: 2) { error in
             if let error = error {
                 XCTFail("waitForExpectationsWithTimeout errored: \(error)")
             }
@@ -57,7 +56,7 @@ class StoreDataTests: XCTestCase {
             
             expect.fulfill()
             
-            //Teardowns
+            //Teardown
             self.cleanNSUserDefaults()
         }
         
@@ -67,6 +66,33 @@ class StoreDataTests: XCTestCase {
             }
         }
         
+    }
+    
+    func testCheckForStoredData() {
+        cleanNSUserDefaults()
+        
+        let TestStoreData: StoreData = StoreData()
+        
+        let expectation = TestStoreData.checkForStoredData()
+        
+        XCTAssertFalse(expectation)
+    }
+    
+    func testSaveData() {
+        //Setup
+        let TestStoreData: StoreData = StoreData()
+        
+        let mockApiDataArray = [["mock"]]
+        let mockImageDict = ["mock" : UIImage()]
+        
+        TestStoreData.saveData(mockApiDataArray, mockImageDict)
+        
+        //Execute
+        XCTAssertTrue(UserDefaults.standard.object(forKey: "ApiResponseData") != nil)
+        XCTAssertTrue(UserDefaults.standard.object(forKey: "ImageDict") != nil)
+        
+        //Teardown
+        cleanNSUserDefaults()
     }
     
     func cleanNSUserDefaults() {
