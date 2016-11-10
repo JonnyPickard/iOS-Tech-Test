@@ -14,7 +14,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var getContentButton: UIButton!
     
     @IBAction func getContentButton(_ sender: Any) {
-        getContent()
+        if isContentPresent() {
+            deleteContent()
+        } else {
+            getContent()
+        }
     }
     
     var responseArray = [[String]]()
@@ -35,6 +39,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.tableView.reloadData()
                 self.changeGetContentButton()
             }
+        }
+    }
+    
+    func deleteContent() {
+        responseArray = [[String]]()
+        imageDict = [String : UIImage]()
+        tableView.reloadData()
+    }
+    
+    func isContentPresent() -> Bool {
+        if responseArray.count > 1 {
+            return true
+        } else {
+            return false
         }
     }
     
