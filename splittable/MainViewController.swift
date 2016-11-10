@@ -52,6 +52,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
                 self.tableView.reloadData()
                 self.changeGetContentButton()
+            } else {
+                self.noContentInTableView(hidden: false)
             }
         }
     }
@@ -66,6 +68,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.tableView.reloadData()
                 self.changeGetContentButton()
                 self.saveData()
+                self.noContentInTableView(hidden: true)
             }
         }
     }
@@ -76,6 +79,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         deleteStoredData()
         tableView.reloadData()
         changeGetContentButton()
+        noContentInTableView(hidden: false)
     }
     
     func isContentPresent() -> Bool {
@@ -95,6 +99,31 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             getContentButton.setTitle(" Get Content ", for: .normal)
             getContentButton.setTitleColor(UIColor.blue, for: .normal)
             getContentButton.backgroundColor = UIColor.white
+        }
+    }
+    
+    func noContentInTableView(hidden: Bool) {
+        if hidden == false {
+            let tvBounds = tableView.bounds
+            let frame = CGRect(x: tvBounds.maxX, y: tvBounds.maxY, width: tvBounds.width - 400, height: tvBounds.height)
+            
+            let noDataLabel: UILabel = UILabel(frame: frame)
+            
+            noDataLabel.text = "Click 'Get Content' below to get content"
+            
+            noDataLabel.numberOfLines = 0
+            noDataLabel.textColor = UIColor(red: 22.0/255.0, green: 106.0/255.0, blue: 176.0/255.0, alpha: 1.0)
+            
+            noDataLabel.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightLight)
+            
+            noDataLabel.textAlignment = NSTextAlignment.center
+            
+            self.tableView.backgroundView = noDataLabel
+            self.tableView.separatorColor = UIColor.clear
+        } else {
+            let clearView = UIView(frame: tableView.bounds)
+            self.tableView.backgroundView = clearView
+            self.tableView.separatorColor = UIColor.lightGray
         }
     }
 
