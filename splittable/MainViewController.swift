@@ -30,6 +30,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         loadSavedData()
     }
     
+    func saveData() {
+        let dataStore = StoreData()
+        
+        dataStore.saveData(responseArray, imageDict)
+    }
+    
     func loadSavedData() {
         let dataStore = StoreData()
         
@@ -39,6 +45,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.imageDict = imageSaveDict!
                 
                 self.tableView.reloadData()
+                self.changeGetContentButton()
             }
         }
     }
@@ -52,6 +59,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.changeGetContentButton()
+                self.saveData()
             }
         }
     }
@@ -60,6 +68,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         responseArray = [[String]]()
         imageDict = [String : UIImage]()
         tableView.reloadData()
+        changeGetContentButton()
     }
     
     func isContentPresent() -> Bool {
