@@ -135,15 +135,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if let cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: "splittableCell") as! TableViewCell? {
             let responseID = responseArray[indexPath.row][0]
             
-            cell.tableViewTitleLabel?.text = responseArray[indexPath.row][2]
             cell.tableViewImage?.image = imageDict[responseID]
             
             let url = responseArray[indexPath.row][4]
             if url == "" {
                 cell.accessoryType = UITableViewCellAccessoryType.none
                 cell.selectionStyle = .none
+                cell.tableViewTitleLabel?.text = ""
             } else {
                 cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+                cell.tableViewTitleLabel?.text = responseArray[indexPath.row][2]
             }
             
             return cell
