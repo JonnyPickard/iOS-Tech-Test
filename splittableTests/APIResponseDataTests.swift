@@ -9,6 +9,8 @@
 import XCTest
 @testable import splittable
 
+import SwiftyJSON
+
 class APIResponseDataTests: XCTestCase {
     
     func testGetData(){
@@ -72,6 +74,6 @@ class APIResponseDataTests: XCTestCase {
                 XCTFail("waitForExpectationsWithTimeout errored: \(error)")
             }
         }
-
     }
+    
 }

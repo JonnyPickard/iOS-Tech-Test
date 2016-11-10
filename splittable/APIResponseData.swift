@@ -13,30 +13,40 @@ import PromiseKit
 class APIResponseData {
     
     func getData(requestManager: APIRequestManager = APIRequestManager(), completion: @escaping (_ responseArray: [[String]], _ imageDict: [String : UIImage], _ success: Bool) -> Void) {
-        var responseArray = [[String]]()
         
+        //Get request
         requestManager.getRequest() { jsonResponse, success in
-            
-            for (_, object) in jsonResponse {
-                
-                var array = [String]()
-                array.append(object["id"].stringValue)
-                array.append(object["sort_order"].stringValue)
-                array.append(object["name"].stringValue)
-                array.append(object["image_url"].stringValue)
-                array.append(object["url"].stringValue)
-                responseArray.append(array)
-                
-            }
-            
-            self.sortArray(responseArray: responseArray) { sortedArray, success in
-                
-                self.getImagesFromURL(sortedArray: sortedArray){ imageDict, success in
-                    
-                    completion(responseArray, imageDict, true)
+            //Convert json to multidimensional String array
+            self.createArrayFromJSON(jsonResponse) { responseArray, success in
+                //Sort array
+                self.sortArray(responseArray: responseArray) { sortedArray, success in
+                    //Get images using URL from array
+                    self.getImagesFromURL(sortedArray: sortedArray){ imageDict, success in
+                        //Return the String array and Dict containing the Images
+                        completion(responseArray, imageDict, true)
+                    }
                 }
             }
         }
+    }
+    
+    func createArrayFromJSON(_ jsonResponse :JSON, completion: @escaping (_ array: [[String]], _ success: Bool) -> Void) {
+        var responseArray = [[String]]()
+        
+        print(jsonResponse)
+        
+        for (_, object) in jsonResponse {
+
+            var array = [String]()
+            array.append(object["id"].stringValue)
+            array.append(object["sort_order"].stringValue)
+            array.append(object["name"].stringValue)
+            array.append(object["image_url"].stringValue)
+            array.append(object["url"].stringValue)
+            responseArray.append(array)
+        }
+        
+        completion(responseArray, true)
     }
     
     func sortArray(responseArray: [[String]], completion: (_ response: [[String]], _ success: Bool) -> Void) {
