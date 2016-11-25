@@ -1,13 +1,13 @@
-Splittable Tech Test
+iOS Tech Test
 ====================
 
 About
 -----
-A Junior Tech test for Splittable.co.
+A Junior Tech test for ******
 
 Goal
 ----
-To produce a simple iOS application demonstrating an understanding of the Swift language, network communication, JSON parsing and use of core UIKit frameworks. This coding test is based off an actual feature in the Splittable iOS application.
+To produce a simple iOS application demonstrating an understanding of the Swift language, network communication, JSON parsing and use of core UIKit frameworks. This coding test is based off an actual feature in the ***** iOS application.
 
 Task
 ----
